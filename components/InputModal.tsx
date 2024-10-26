@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 import InsertModal from "./InsertModal";
+import { Input } from "./ui/input";
 
 interface ModalProps {
   onClose: (e: React.MouseEvent) => void;
@@ -70,7 +71,7 @@ const InputModal: React.FC<ModalProps> = ({ onClose }) => {
           mx-auto
         "
       >
-        <input
+        {/* <input
           className="w-[415px] h-[30px] rounded-[4px] shadow-[inset_0px_2px_4px_0px_rgba(0,0,0,0.06)] border-[#C1C7D0] bg-[#FFFFFF]
             mx-auto placeholder:font-inter placeholder:font-[400] placeholder:text-[15px]
             placeholder:leading-[26px] placeholder:text-[#A4ACB9]  
@@ -81,6 +82,14 @@ const InputModal: React.FC<ModalProps> = ({ onClose }) => {
           onChange={(e) => setPrompt(e.target.value)}
           placeholder="Your prompt"
           ref={messageInputRef}
+        /> */}
+        <Input
+          className="w-[415px] h-[30px] rounded-[4px] shadow-[inset_0px_2px_4px_0px_rgba(0,0,0,0.06)] border-[#C1C7D0] bg-[#FFFFFF] mx-auto"
+          ref={messageInputRef}
+          type="text"
+          placeholder="Your prompt"
+          value={prompt}
+          onChange={(e) => setPrompt(e.target.value)}
         />
 
         <div
